@@ -61,7 +61,7 @@ if (Module['ENVIRONMENT']) {
 
 
 // `/` should be present at the end if `scriptDirectory` is not empty
-var scriptDirectory = '';
+var scriptDirectory = 'https://raw.githubusercontent.com/zurcamos/Mario64webgl/refs/heads/main/';
 function locateFile(path) {
   if (Module['locateFile']) {
     return Module['locateFile'](path, scriptDirectory);
