@@ -1739,7 +1739,7 @@ function getBinaryPromise() {
       // Let's not use fetch to get objects over file:// as it's most likely Cordova which doesn't support fetch for file://
       && !isFileURI(wasmBinaryFile)
       ) {
-    return fetch(wasmBinaryFile, { credentials: 'same-origin' }).then(function(response) {
+    return fetch(wasmBinaryFile).then(function(response) {
       if (!response['ok']) {
         throw "failed to load wasm binary file at '" + wasmBinaryFile + "'";
       }
@@ -1809,7 +1809,7 @@ function createWasm() {
         // Don't use streaming for file:// delivered objects in a webview, fetch them synchronously.
         !isFileURI(wasmBinaryFile) &&
         typeof fetch === 'function') {
-      fetch(wasmBinaryFile, { credentials: 'same-origin' }).then(function (response) {
+      fetch(wasmBinaryFile).then(function (response) {
         var result = WebAssembly.instantiateStreaming(response, info);
         return result.then(receiveInstantiatedSource, function(reason) {
             // We expect the most common failure cause to be a bad MIME type for the binary,
