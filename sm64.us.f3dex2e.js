@@ -1710,7 +1710,7 @@ function createExportWrapper(name, fixedasm) {
   };
 }
 
-var wasmBinaryFile = 'sm64.us.f3dex2e.wasm';
+var wasmBinaryFile = 'https://raw.githubusercontent.com/zurcamos/Mario64webgl/refs/heads/main/sm64.us.f3dex2e.wasm';
 if (!isDataURI(wasmBinaryFile)) {
   wasmBinaryFile = locateFile(wasmBinaryFile);
 }
